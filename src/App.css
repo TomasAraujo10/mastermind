@@ -1,0 +1,274 @@
+/* CSS reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4A90E2, #001f3f);
+  color: #fff;
+}
+
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Game Screen */
+.game-screen h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  color: #fff;
+}
+
+input, button {
+  padding: 0.75em;
+  font-size: 1em;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  background: #4A90E2;
+  color: #fff;
+  transition: background-color 0.3s ease;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), -4px -4px 8px rgba(255, 255, 255, 0.1);
+}
+
+button:hover {
+  background-color: #357ABD;
+}
+
+/* Colors for Drag and Drop */
+.color-button {
+  width: 40px;
+  height: 40px;
+  margin: 0.5em;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.colors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* Espaço superior para separar da área de tentativas */
+}
+
+.color-row {
+  display: flex;
+  gap: 10px; /* Espaçamento horizontal entre as cores */
+  margin-bottom: 10px; /* Espaçamento entre as duas linhas de cores */
+}
+
+.color-button.red { background-color: red; }
+.color-button.blue { background-color: blue; }
+.color-button.green { background-color: green; }
+.color-button.yellow { background-color: yellow; }
+.color-button.orange { background-color: orange; }
+.color-button.purple { background-color: purple; }
+
+/* Guess Input Area */
+.guess-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.current-guess {
+  display: flex;
+  gap: 0.5em;
+}
+
+.guess-slot {
+  width: 40px;
+  height: 40px;
+  border: 2px dashed #aaa;
+  border-radius: 50%;
+  background: #eee;
+}
+
+/* Colors for Pegs */
+.red { background-color: red; }
+.blue { background-color: blue; }
+.green { background-color: green; }
+.yellow { background-color: yellow; }
+.orange { background-color: orange; }
+.purple { background-color: purple; }
+
+/* Attempt History */
+.game-board {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.attempt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5em 0;
+  border-top: 1px solid #ddd;
+}
+
+.guess-row {
+  display: flex;
+  gap: 0.5em;
+}
+
+.peg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.feedback {
+  margin-top: 0.5em;
+  font-size: 0.9em;
+  color: #ddd;
+}
+
+/* Splash Screen */
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.splash-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.splash-subtitle {
+  font-size: 1.2rem;
+  color: #ddd;
+  margin-bottom: 2rem;
+}
+
+.player-input {
+  padding: 0.75rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  margin-bottom: 1.5rem;
+  width: 80%;
+  max-width: 300px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.player-input:focus {
+  outline: none;
+  border-color: #4A90E2;
+  box-shadow: 0px 0px 8px rgba(74, 144, 226, 0.5);
+}
+
+.start-button {
+  padding: 0.75em 1.5em;
+  font-size: 1.2rem;
+  background: #4A90E2;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.start-button:hover {
+  background-color: #357ABD;
+  transform: scale(1.05);
+}
+
+.start-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+}
+
+.modal-content p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+  background-color: #4285f4;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #357ae8;
+}
+
+.modal-content button:focus {
+  outline: none;
+}
+
+.modal-content .button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
